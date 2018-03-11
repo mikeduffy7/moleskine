@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('journal', function() {
-    return view('journal');
-});
+Route::get('journal', 'JournalController@index');
