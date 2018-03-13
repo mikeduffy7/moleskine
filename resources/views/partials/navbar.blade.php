@@ -1,23 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
-    <button class="navbar-toggler" 
-            type="button" 
-            data-toggle="collapse" 
-            data-target="#navbarTogglerDemo01" 
-            aria-controls="navbarTogglerDemo01" 
-            aria-expanded="false" 
-            aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    {{-- on mobile, site name and login. if already logged in, have name, jounals, and a plus sign --}}
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">Moleskine</a>
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/journal">New Post</a>
-        </li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Branding Image -->
+    <a class="navbar-brand" href="{{ url('/') }}">
+        {{ config('app.name', 'Moleskine') }}
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Left Side of Navbar -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/journal">New Post</a>
+          </li>
+        </ul>
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('register') }}">Register</a>
+                </li>
+            @else
+                <li class="nav-item dropdown">
+                    <a href="#" 
+                      class="nav-link dropdown-toggle" 
+                      data-toggle="dropdown" 
+                      role="button" 
+                      aria-expanded="false" 
+                      aria-haspopup="true" 
+                      v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            @endguest
+        </ul>
     </div>
-  </nav>
+</nav>

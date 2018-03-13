@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('journal', 'JournalController@index');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
