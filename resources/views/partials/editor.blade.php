@@ -23,7 +23,7 @@
 <form>
     @method('put')
     @csrf
-    
+
 
 </form>
 
