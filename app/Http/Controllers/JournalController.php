@@ -15,4 +15,8 @@ class JournalController extends Controller
 
         return view('journal');
     }
+
+    public function store() {
+        
+    }
 }
