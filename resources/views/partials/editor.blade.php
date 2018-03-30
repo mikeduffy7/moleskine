@@ -15,16 +15,15 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-beta.1/classic/ckeditor.js"></script>
 
 <div class="container mt-4">
-    <form method="POST" action="{{route('journal.save')}}">
+    <form method="POST" action="{{route('page.save')}}">
         {{ csrf_field() }}
-        
-        <textarea id="editor" name="post">
-                <p>This is some sample content.</p>
-        </textarea>
+
+        {{-- text editor --}}
+        <textarea id="editor" name="post"></textarea>
 
         <div class="row">
             <div class="col text-center">
-                <button id="journal-save" 
+                <button id="page-save" 
                         type="submit" 
                         class="btn btn-success mt-2" 
                         value="Submit">Save</button>

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class Journal extends Model
 {
-    protected $table = 'pages';
+    protected $table = 'journals';
 }

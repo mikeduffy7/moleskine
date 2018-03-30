@@ -7,9 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <!-- Left Side of Navbar -->
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/journal">New Post</a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="page">New Post</a>
+            </li>
+            <li>
+                <a class="nav-link" href="journal">Journals</a>
+            </li>
         </ul>
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav ml-auto">

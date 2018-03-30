@@ -3,30 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Page;
+use App\Journal;
 
 class JournalController extends Controller
 {
     public function index() {
-
-        // save the contents of the text to local storage 
-        // have it save every X seconds
-        // save the local storage content to the DB when 
-
-
-        return view('journal');
+        return view('journals.index');
     }
 
-    public function store(Request $request) {
-        $postRequest = $request->post;
-        $journalRequest = 1;
+    // create a journal that will have a title
 
-        $entry = new Page();
-        $entry->post = $postRequest;
-        $entry->journal = $journalRequest;
-        
-        $entry->save();
-        
-        return redirect('/journal');
-    }
+    /* 
+    * inside of each journal, there will be pages that will  
+    * be created and stored to be kept inside
+    * of the journal
+    */ 
+
 }

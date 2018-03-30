@@ -15,11 +15,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('journal', 'JournalController@index');
-Route::post('journal/save', [
-    'as' => 'journal.save',
-    'uses' => 'JournalController@store'
+Route::get('page', 'PageController@index');
+Route::post('page/save', [
+    'as' => 'page.save',
+    'uses' => 'PageController@store'
 ]);
+
+Route::get('journal', 'JournalController@index');
 
 
 // TODO:complete auth

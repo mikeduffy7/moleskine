@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class JournalEntryTable extends Migration
+class CreatePagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class JournalEntryTable extends Migration
      */
     public function up()
     {
-        Schema::create('journal_entry', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('post');
             $table->integer('journal');
@@ -28,6 +28,6 @@ class JournalEntryTable extends Migration
      */
     public function down()
     {
-        Schema::drop('journal_entry');
+        Schema::drop('pages');
     }
 }
