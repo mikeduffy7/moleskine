@@ -16,8 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('journal', 'JournalController@index');
+Route::post('journal/save', [
+    'as' => 'journal.save',
+    'uses' => 'JournalController@store'
+]);
 
 
+// TODO:complete auth
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

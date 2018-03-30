@@ -15,9 +15,8 @@ class JournalEntryTable extends Migration
     {
         Schema::create('journal_entry', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
             $table->string('post');
-            $table->string('journal');
+            $table->integer('journal');
             $table->timestamps();
         });
     }

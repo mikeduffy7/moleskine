@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Page;
 
 class JournalController extends Controller
 {
@@ -16,7 +17,16 @@ class JournalController extends Controller
         return view('journal');
     }
 
-    public function store() {
+    public function store(Request $request) {
+        $postRequest = $request->post;
+        $journalRequest = 1;
+
+        $entry = new Page();
+        $entry->post = $postRequest;
+        $entry->journal = $journalRequest;
         
+        $entry->save();
+        
+        return redirect('/journal');
     }
 }
