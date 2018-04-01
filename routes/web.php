@@ -22,6 +22,7 @@ Route::post('page/save', [
 ]);
 
 Route::get('journal', 'JournalController@index');
+Route::get('journal/create', 'JournalController@create');
 
 
 // TODO:complete auth

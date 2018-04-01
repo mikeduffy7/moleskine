@@ -19,4 +19,15 @@ class JournalController extends Controller
     * of the journal
     */ 
 
+    public function create() {
+        $journal = new Journal();
+
+        $journal->title = "new journal";
+        $journal->pages = '[0,1]';
+
+        $journal->save();
+
+        return redirect('journal');
+    }
+
 }
