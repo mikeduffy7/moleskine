@@ -8,7 +8,9 @@ use App\Journal;
 class JournalController extends Controller
 {
     public function index() {
-        return view('journals.index');
+        $journals = Journal::all();
+
+        return view('journals.index', ['journals' => $journals]);
     }
 
     // create a journal that will have a title
@@ -19,10 +21,11 @@ class JournalController extends Controller
     * of the journal
     */ 
 
-    public function create() {
+    public function create(Request $request) {
+        $titleRequest = $request->title;
         $journal = new Journal();
 
-        $journal->title = "new journal";
+        $journal->title = $titleRequest;
         $journal->pages = '[0,1]';
 
         $journal->save();

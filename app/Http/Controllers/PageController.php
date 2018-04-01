@@ -17,6 +17,7 @@ class PageController extends Controller
         return view('pages.index');
     }
 
+    // TODO: change this to create
     public function store(Request $request) {
         $postRequest = $request->post;
         $journalRequest = 1;
